@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "id": "usr_owner1",
+      "email": "owner@example.com",
+      "password": "password",
+      "name": "Jane Doe (Owner)",
+      "role": "owner"
+    },
+    {
+      "id": "usr_sales1",
+      "email": "sales@example.com",
+      "password": "password",
+      "name": "Alex Smith (Sales)",
+      "role": "sales"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_1",
+      "name": "MacBook Pro M3 Max",
+      "sku": "APP-MBP-XM3",
+      "category": "Electronics",
+      "costPrice": 2200,
+      "sellingPrice": 2999,
+      "stock": 6,
+      "minStockAlert": 5,
+      "createdAt": "2026-05-15T10:00:00.000Z"
+    },
+    {
+      "id": "prod_2",
+      "name": "Logitech MX Master 3S",
+      "sku": "LGT-MX3S",
+      "category": "Accessories",
+      "costPrice": 55,
+      "sellingPrice": 99,
+      "stock": 30,
+      "minStockAlert": 10,
+      "createdAt": "2026-05-16T11:30:00.000Z"
+    },
+    {
+      "id": "prod_3",
+      "name": "Keychron Q1 Pro Mechanical Keyboard",
+      "sku": "KCH-Q1P",
+      "category": "Accessories",
+      "costPrice": 110,
+      "sellingPrice": 189,
+      "stock": 0,
+      "minStockAlert": 8,
+      "createdAt": "2026-05-18T14:15:00.000Z"
+    },
+    {
+      "id": "prod_4",
+      "name": "Dell UltraSharp 27\" U2723QE",
+      "sku": "DEL-US27",
+      "category": "Electronics",
+      "costPrice": 280,
+      "sellingPrice": 399,
+      "stock": 13,
+      "minStockAlert": 5,
+      "createdAt": "2026-05-19T09:00:00.000Z"
+    },
+    {
+      "id": "prod_5",
+      "name": "Ergonomic Adjustable Standing Desk",
+      "sku": "FUR-ESD7",
+      "category": "Furniture",
+      "costPrice": 210,
+      "sellingPrice": 399,
+      "stock": 0,
+      "minStockAlert": 5,
+      "createdAt": "2026-05-20T16:45:00.000Z"
+    },
+    {
+      "id": "prod_6",
+      "name": "Sony WH-1000XM5 Noise Cancelling Headphones",
+      "sku": "SON-XM5",
+      "category": "Electronics",
+      "costPrice": 180,
+      "sellingPrice": 299,
+      "stock": 1,
+      "minStockAlert": 6,
+      "createdAt": "2026-05-21T13:20:00.000Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx_1780564912137",
+      "products": [
+        {
+          "productId": "prod_1",
+          "name": "MacBook Pro M3 Max",
+          "quantity": 1,
+          "priceSpent": 2999,
+          "costPrice": 2200
+        },
+        {
+          "productId": "prod_2",
+          "name": "Logitech MX Master 3S",
+          "quantity": 1,
+          "priceSpent": 99,
+          "costPrice": 55
+        },
+        {
+          "productId": "prod_3",
+          "name": "Keychron Q1 Pro Mechanical Keyboard",
+          "quantity": 1,
+          "priceSpent": 189,
+          "costPrice": 110
+        },
+        {
+          "productId": "prod_4",
+          "name": "Dell UltraSharp 27\" U2723QE",
+          "quantity": 1,
+          "priceSpent": 399,
+          "costPrice": 280
+        },
+        {
+          "productId": "prod_6",
+          "name": "Sony WH-1000XM5 Noise Cancelling Headphones",
+          "quantity": 15,
+          "priceSpent": 299,
+          "costPrice": 180
+        }
+      ],
+      "totalAmount": 8171,
+      "totalCost": 5345,
+      "profit": 2826,
+      "salespersonId": "usr_owner1",
+      "salespersonName": "Jane Doe (Owner)",
+      "customerName": "john",
+      "customerPhone": "8778764551",
+      "paymentMethod": "Online",
+      "createdAt": "2026-06-04T09:21:52.137Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "log_1780564912137_prod_6",
+      "productId": "prod_6",
+      "productName": "Sony WH-1000XM5 Noise Cancelling Headphones",
+      "quantityChange": -15,
+      "previousStock": 16,
+      "newStock": 1,
+      "type": "sale",
+      "reason": "Automated stock deduction for sale #tx_1780564912137",
+      "user": "Jane Doe (Owner)",
+      "createdAt": "2026-06-04T09:21:52.137Z"
+    },
+    {
+      "id": "log_1780564912137_prod_4",
+      "productId": "prod_4",
+      "productName": "Dell UltraSharp 27\" U2723QE",
+      "quantityChange": -1,
+      "previousStock": 14,
+      "newStock": 13,
+      "type": "sale",
+      "reason": "Automated stock deduction for sale #tx_1780564912137",
+      "user": "Jane Doe (Owner)",
+      "createdAt": "2026-06-04T09:21:52.137Z"
+    },
+    {
+      "id": "log_1780564912137_prod_3",
+      "productId": "prod_3",
+      "productName": "Keychron Q1 Pro Mechanical Keyboard",
+      "quantityChange": -1,
+      "previousStock": 1,
+      "newStock": 0,
+      "type": "sale",
+      "reason": "Automated stock deduction for sale #tx_1780564912137",
+      "user": "Jane Doe (Owner)",
+      "createdAt": "2026-06-04T09:21:52.137Z"
+    },
+    {
+      "id": "log_1780564912137_prod_2",
+      "productId": "prod_2",
+      "productName": "Logitech MX Master 3S",
+      "quantityChange": -1,
+      "previousStock": 31,
+      "newStock": 30,
+      "type": "sale",
+      "reason": "Automated stock deduction for sale #tx_1780564912137",
+      "user": "Jane Doe (Owner)",
+      "createdAt": "2026-06-04T09:21:52.137Z"
+    },
+    {
+      "id": "log_1780564912137_prod_1",
+      "productId": "prod_1",
+      "productName": "MacBook Pro M3 Max",
+      "quantityChange": -1,
+      "previousStock": 7,
+      "newStock": 6,
+      "type": "sale",
+      "reason": "Automated stock deduction for sale #tx_1780564912137",
+      "user": "Jane Doe (Owner)",
+      "createdAt": "2026-06-04T09:21:52.137Z"
+    },
+    {
+      "id": "log_init_1",
+      "productId": "prod_1",
+      "productName": "MacBook Pro M3 Max",
+      "quantityChange": 12,
+      "previousStock": 0,
+      "newStock": 12,
+      "type": "product_created",
+      "reason": "Initial listing uploaded",
+      "user": "System Seeder",
+      "createdAt": "2026-05-15T10:00:00.000Z"
+    },
+    {
+      "id": "log_init_2",
+      "productId": "prod_3",
+      "productName": "Keychron Q1 Pro Mechanical Keyboard",
+      "quantityChange": 4,
+      "previousStock": 0,
+      "newStock": 4,
+      "type": "product_created",
+      "reason": "Initial listing uploaded",
+      "user": "System Seeder",
+      "createdAt": "2026-05-18T14:15:00.000Z"
+    }
+  ]
+}
