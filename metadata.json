@@ -1,0 +1,6 @@
+{
+  "name": "Inventory Management System",
+  "description": "A full-stack Inventory Management System featuring role-based dashboards for Owners and Sales users, real-time stock levels, POS transactions, automatic stock deductions, and detailed profit/loss analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
