@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base smooth transition for background and border transitions */
+html, body, #app-root, header, nav, main, footer, div, section, table, td, th, tr, input, button, select, p, label, span, h1, h2, h3, h4, h5, h6 {
+  transition-property: background-color, border-color, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+/* 🌙 Premium Dark Theme Custom Mappings */
+.dark {
+  background-color: #030712;
+  color: #f3f4f6;
+  color-scheme: dark;
+
+  /* Invert White elements (dialogs, cards, header) to elegant midnight navy */
+  --color-white: #0f172a; 
+
+  /* Responsive Dark Scale */
+  --color-slate-50: #030712;   /* Bottom-most Canvas */
+  --color-slate-100: #1e293b;  /* Borders, dividers, subtle sections */
+  --color-slate-150: #334155;  /* Hover backgrounds, borders */
+  --color-slate-200: #334155;  /* Strong border lines */
+  --color-slate-205: #475569;  /* Outlined elements */
+  --color-slate-300: #475569;
+  --color-slate-350: #64748b;
+  --color-slate-400: #94a3b8;  /* Auxiliary text labels */
+  --color-slate-450: #94a3b8;
+  --color-slate-500: #cbd5e1;  /* Standard paragraph text */
+  --color-slate-550: #e2e8f0;
+  --color-slate-600: #edf2f7;
+  --color-slate-700: #f1f5f9;  /* Contrast text headers */
+  --color-slate-800: #f8fafc;  /* Bold list item values */
+  --color-slate-900: #ffffff;  /* Primary bright titles */
+  --color-slate-950: #ffffff;
+
+  /* Form Focus Ring glow adjustments */
+  --color-indigo-50: #1e1b4b;
+  --color-indigo-100: #312e81;
+}
+
+/* Ensure selected rows/tabs in dark mode maintain correct focus styling */
+.dark .bg-white {
+  background-color: #0f172a;
+}
+.dark .bg-slate-50\/50 {
+  background-color: rgba(3, 7, 18, 0.5);
+}
+.dark .border-slate-105 {
+  border-color: #1e293b;
+}
+.dark input::placeholder {
+  color: #64748b;
+}
