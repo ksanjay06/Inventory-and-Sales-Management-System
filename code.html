@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory and Sales Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .delete-btn {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Inventory and Sales Management System</h1>
+
+    <h3>Add Product</h3>
+
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="quantity" placeholder="Quantity">
+    <input type="number" id="price" placeholder="Price">
+    <button onclick="addProduct()">Add Product</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Value</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+    </table>
+
+    <h3>Total Sales: ₹<span id="sales">0</span></h3>
+</div>
+
+<script>
+    let totalSales = 0;
+
+    function addProduct() {
+        let name = document.getElementById("productName").value;
+        let qty = document.getElementById("quantity").value;
+        let price = document.getElementById("price").value;
+
+        if(name === "" || qty === "" || price === "") {
+            alert("Please fill all fields");
+            return;
+        }
+
+        let total = qty * price;
+        totalSales += total;
+
+        document.getElementById("sales").innerText = totalSales;
+
+        let table = document.getElementById("productTable");
+
+        let row = table.insertRow();
+
+        row.innerHTML = `
+            <td>${name}</td>
+            <td>${qty}</td>
+            <td>₹${price}</td>
+            <td>₹${total}</td>
+            <td>
+                <button class="delete-btn" onclick="deleteRow(this, ${total})">
+                    Delete
+                </button>
+            </td>
+        `;
+
+        document.getElementById("productName").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("price").value = "";
+    }
+
+    function deleteRow(btn, total) {
+        btn.parentElement.parentElement.remove();
+        totalSales -= total;
+        document.getElementById("sales").innerText = totalSales;
+    }
+</script>
+
+</body>
+</html>
